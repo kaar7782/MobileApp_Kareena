@@ -29,17 +29,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var price : Float
         var percent : Float
         
-//        let textprice = originalPrice.text!
+        print(originalPrice.text!)
+        if originalPrice.text!.isEmpty {
+            price = 0.0
+        }
+        else {
+            price = Float(originalPrice.text!)!
+        }
 
-            if originalPrice.text!.isEmpty {
-                price = 0.0
-            }
-            else {
-                price = Float(originalPrice.text!)!
-            }
-
-//price = Float(originalPrice.text!) ?? 0.0
-        
         percent = Float(percentStepper.value) / 100
         
 
@@ -52,13 +49,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             percent = Float(percentStepper.value) / 100
         }
         else {
-            let alert=UIAlertController(title: "Warning", message: "The percent must be greater than 10%", preferredStyle: UIAlertController.Style.alert)
+            let alert=UIAlertController(title: "Wait!", message: "The percent must be greater than 10%", preferredStyle: UIAlertController.Style.alert)
             
-            let cancelAction=UIAlertAction(title: "Cancel", style:UIAlertAction.Style.cancel, handler: nil)
+            let cancelAction=UIAlertAction(title: "Go Back!", style:UIAlertAction.Style.cancel, handler: nil)
             alert.addAction(cancelAction)
-            let okAction=UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {action in
+            let okAction = UIAlertAction(title: "Got it!", style: UIAlertAction.Style.default, handler: {action in
                 self.percentStepper.value = 10
-                self.percentUpdate.text? = "10"
+//                self.percentUpdate.text? = "10"
                 self.saleCalc()
             })
             alert.addAction(okAction)
@@ -68,7 +65,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let currencyFormatter = NumberFormatter()
         currencyFormatter.numberStyle = NumberFormatter.Style.currency
-        originalPrice.text=currencyFormatter.string(from: NSNumber(value: price))
+//        originalPrice.text=currencyFormatter.string(from: NSNumber(value: price))
         finalCost.text=currencyFormatter.string(from: NSNumber(value: cost))
         
     }
@@ -80,7 +77,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         originalPrice.delegate = self
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:
+            #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap) //tap gesture code for keyboard going away at tap from book
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
