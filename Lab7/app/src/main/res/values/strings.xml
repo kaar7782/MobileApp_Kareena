@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lab 7</string>
+    <string name="textName" />
+    <string name="textName1" />
+    <string name="buttonH">Halloween</string>
+    <string name="buttonC">Christmas</string>
+    <string name="chooseText">Choose a holiday!</string>
+    <string name="editName">name</string>
+    <string name="doneEnteringName">Done</string>
+</resources>
