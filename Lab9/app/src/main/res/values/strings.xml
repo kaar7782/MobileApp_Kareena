@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Lab 8</string>
+    <string name="title">Pizza Party!</string>
+    <string name="rb1">chicken</string>
+    <string name="rb2">sausage</string>
+    <string name="rb3">cheese</string>
+    <string name="pizzaButton">Make Pizza!</string>
+    <string name="cb1">spinac</string>
+    <string name="box1">spinach</string>
+    <string name="box2">olives</string>
+    <string name="box3">jalepenos</string>
+    <string name="box4">bellpeppers</string>
+    <string name="glutenSwitch">gluten-free crust</string>
+    <string name="prefPizza">make a special pizza</string>
+    <string name="prefPizza2">Add More Preferences</string>
+    <string-array name="size">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+    </string-array>
+    <string-array name="preferences">
+        <item>no gluten</item>
+        <item>no dairy</item>
+        <item>no sauce</item>
+    </string-array>
+    <string name="title_activity_main_pizza">Pizza Activity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="allergyHint">give any other special instructions</string>
+</resources>
